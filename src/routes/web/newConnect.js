@@ -5,16 +5,16 @@ import MongoStore from "connect-mongo";
 import config from "../../../connection.js";
 import { webAuth } from "../../auth/index.js";
 import { faker } from "@faker-js/faker";
-import Container from "./../../DAOs/connectionMongo.js";
+import Producto from "./../../DAOs/Producto.dao.class.js";
 import passport from "./../../config/passportConfig.js";
 import { fork } from "child_process";
 import os from "os";
 import pino from "pino";
 import cluster from 'node:cluster';
-
+ 
 
 const numCpu = os.cpus().length;
-const products = new Container();
+const products = new Producto();
 const router = express.Router();
 const forked = fork("child.js");
 const PORT = parseInt(process.argv[2]) || 8080
