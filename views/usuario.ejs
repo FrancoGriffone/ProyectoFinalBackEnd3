@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Ingreso de Productos</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <h1 class="alert alert-success">
+            <div class="text-left">
+                <button class="btn btn-success my-3" onclick="location.href = '/home'">Ir a Home</button>
+            </div>
+        </h1>
+    </div>
+
+    <div class="container mt-3">
+        <div class="jumbotron">
+
+            <div class="table-responsive">
+                <div id="datosUsuario" class="center_button title">
+                    <h1>DATOS DE USUARIO</h1>
+                    <% data.forEach((data)=> { %>
+
+                        <tr>
+                            <th>SISTEMA OPERATIVO: </th>
+                            <td>
+                                <%= data.username %>
+                            </td>
+                            <hr>
+                            <th>VERSION: </th>
+                            <td>
+                                <%= data.password %>
+                            </td>
+                            <hr>
+                            <th>MEMORIA: </th>
+                            <td>
+                                <%= data.id %>
+                            </td>
+                            <hr>
+
+                        </tr>
+                        <tr>
+
+                        </tr>
+                        <% }) %>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script src="../public/js/main.js"></script>
+
+</body>
+
+</html>

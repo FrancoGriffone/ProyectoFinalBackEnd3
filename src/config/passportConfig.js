@@ -64,6 +64,7 @@ passport.use("register", new localStrategy(
             } catch (error) {
                 console.log(err)
             }
+            //await sendMail(), abria que hacer el async arriba
             console.log("Este try de register")
         } catch (error) {
             console.log({ error: 'Usuario ya existe' })
@@ -100,8 +101,8 @@ passport.serializeUser((usuario, done) => {
 	done(null, usuario.username);
 });
 
-passport.deserializeUser((id, done) => {
-	UserModel.findById(id, done);
+passport.deserializeUser((username, done) => { //cambie id por username en los argumentos de el deserialize y del findbyid, que lo puse como findone
+	UserModel.findOne(username, done);
 });
 
 function createHash(password){

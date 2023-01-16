@@ -13,6 +13,10 @@ socket.on("productList", (data) => {
 socket.on("infoPc", (data)=>{
     renderInfo(data)
 })
+socket.on("infoUsuario", (data)=>{
+    renderData(data)
+})
+
 
 // Funciones mensajes
 function render(data) {
@@ -95,4 +99,18 @@ function renderInfo(data) {
         </div><br><br>`);
     }).join("");
     info.innerHTML += html;
+}
+
+//data
+
+function renderData(datos) {
+    const data = document.getElementById("datosUsuario");
+    const html = datos.map(element => {
+        return (`<br><br><div>
+        PID: ${element.username}<br><br>
+        VERSION: ${element.password}<br><br>
+        MEMORIA: ${element.id}<br><br>
+        </div><br><br>`);
+    }).join("");
+    data.innerHTML += html;
 }

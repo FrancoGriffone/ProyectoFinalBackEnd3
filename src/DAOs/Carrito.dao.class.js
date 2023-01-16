@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import Producto from "./Producto.dao.class.js";
 import CarritoModel from "../models/CarritoModel.js"
+import PedidoModel from "../models/PedidoModel.js"
 
 export default class Carrito {
     constructor(){
@@ -51,6 +52,18 @@ export default class Carrito {
             console.log(e)
         }
     }
+
+    //COMPLETAR PEDIDO
+    async completarPedido(id){
+        try{
+            await this.mongodb(this.url)
+            const pedido = CarritoModel.findById(id)
+            return await PedidoModel.findOneAndUpdate({$push:{pedidos:pedido}});
+        } catch(e){
+            console.log(e)
+        }
+    }
+
 
     //ACTUALIZAR UN CARRITO
     async actualizar(carr, id){
