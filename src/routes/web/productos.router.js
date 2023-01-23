@@ -1,9 +1,13 @@
 import express from "express";
-import Producto from "../../DAOs/Producto.dao.class.js";
+//import Producto from "../../DAOs/Producto.dao.class.js";
+import MyConnectionFactory from "../../DAOs/Dao.factory.js";
+
+const connection = new MyConnectionFactory()
+const producto = connection.returnDbConnection()
 
 const router = express.Router();
 
-const producto = new Producto();
+//const producto = new Producto();
 
 function validarAdmin(req, res, next){
     if(req.query.admin){

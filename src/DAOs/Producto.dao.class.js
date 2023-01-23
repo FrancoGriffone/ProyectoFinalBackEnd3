@@ -58,4 +58,11 @@ export default class Producto {
             console.log(e)
         }
     }
+
+    static returnSingleton(){
+        if(!this.instance){
+            this.instance = new Producto()
+        }
+        return this.instance
+    }
 }
