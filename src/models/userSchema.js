@@ -5,7 +5,7 @@ const UserSchema = new Schema({
 	password: { type: String, required: true },
 	edad: { type: Number, required: true },
 	telefono: { type: Number, required: true },
-	direccion: { type: String, required: true, },
+	direccion: { type: String, required: true },
 	avatar: { type: String, required: true }
 });
 

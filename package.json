@@ -5,7 +5,7 @@
   "description": "proyectofinal3",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha index.test.js",
     "start": "nodemon index.js"
   },
   "keywords": [],
@@ -13,8 +13,10 @@
   "license": "ISC",
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
+    "axios": "^1.2.6",
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.1",
+    "chai": "^4.3.7",
     "child_process": "^1.0.2",
     "cluster": "^0.7.7",
     "connect-mongo": "^4.6.0",
@@ -25,6 +27,7 @@
     "express-session": "^1.17.3",
     "faker": "^5.5.3",
     "knex": "^2.3.0",
+    "mocha": "^10.2.0",
     "mongo": "^0.1.0",
     "mongodb": "^4.11.0",
     "mongoose": "^6.7.2",
